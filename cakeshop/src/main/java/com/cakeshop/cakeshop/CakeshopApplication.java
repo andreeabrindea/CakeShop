@@ -14,6 +14,7 @@ public class CakeshopApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CakeshopApplication.class, args);
+
 	}
 
 	@RequestMapping("/")

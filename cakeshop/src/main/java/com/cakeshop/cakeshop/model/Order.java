@@ -1,13 +1,21 @@
 package com.cakeshop.cakeshop.model;
 
-import java.util.ArrayList;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.List;
+
+@Document(collection = "orders")
 public class Order {
+    @Id
     private int id;
+    @Field(name="price")
     private double price;
-    private ArrayList<Integer> cakes;
+    @Field(name="cakes")
+    private List<Cake> cakes;
 
-    public Order(int id, double price, ArrayList<Integer> cakes) {
+    public Order(int id, double price, List<Cake> cakes) {
         this.id = id;
         this.price = price;
         this.cakes = cakes;
@@ -29,11 +37,11 @@ public class Order {
         this.price = price;
     }
 
-    public ArrayList<Integer> getCakes() {
+    public List<Cake> getCakes() {
         return cakes;
     }
 
-    public void setCakes(ArrayList<Integer> cakes) {
+    public void setCakes(List<Cake> cakes) {
         this.cakes = cakes;
     }
 
